@@ -1,3 +1,5 @@
+import { Routes, Route } from 'react-router-dom'
+
 import TopHeader from './components/TopHeader'
 import Bottom_Header from './components/Bottom_Header';
 import HeroSection from './components/Header'
@@ -14,27 +16,38 @@ import RecentBlogs from './components/RecentBlogs';
 import FooterUpper from './components/FooterUpper'
 import Footer from './components/Footer';
 import MobileCategories from './components/MobileCategories';
-function App() {
+import Signup from './Pages/Signup'
 
+function App() {
   return (
     <>
-    <TopHeader/>
-    <Bottom_Header/>
-    <HeroSection/>
-    <MobileCategories/>
-    <TopSpecialties/>
-    <FeaturedDoctors/>
-    <MarqueeStrip/>
-    <CompellingReasons/>
-    <AboutUs />
-    <Testimonials />
-    <TrustedPartners/>
-    <FAQSection/>
-    <Mobile/>
-    <RecentBlogs/>
-    <FooterUpper/>
-    <Footer/>
+      <TopHeader />
+      <Bottom_Header />
 
+      <Routes>
+        {/* Home page — sab sections */}
+        <Route path="/" element={
+          <>
+            <HeroSection />
+            <MobileCategories />
+            <TopSpecialties />
+            <FeaturedDoctors />
+            <MarqueeStrip />
+            <CompellingReasons />
+            <AboutUs />
+            <Testimonials />
+            <TrustedPartners />
+            <FAQSection />
+            <Mobile />
+            <RecentBlogs />
+            <FooterUpper />
+            <Footer />
+          </>
+        } />
+
+        {/* Login page */}
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
     </>
   )
 }
