@@ -2,8 +2,15 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { RiMoreLine, RiCloseLine, RiMessage3Line, RiPhoneFill, RiLockPasswordLine, RiUserLine, RiFacebookCircleLine, RiTwitterXLine, RiInstagramLine, RiLinkedinFill,RiMenuLine } from "@remixicon/react"
 
-const navLinks = ["Home", "Doctors", "Patients", "Pharmacy", "Pages", "Blog", "Admin"]
-
+const navLinks = [
+  { label: "Home", path: "/" },
+  { label: "Doctors", path: "/doctors" },
+  { label: "Patients", path: "/patients" },
+  { label: "Pharmacy", path: "/pharmacy" },
+  { label: "Pages", path: "/pages" },
+  { label: "Blog", path: "/blog" },
+  { label: "Admin", path: "/admin" },
+]
 export default function Bottom_Header() {
   const [openDrawer, setOpenDrawer] = useState(false)
 
@@ -20,16 +27,41 @@ export default function Bottom_Header() {
 
             {/* Desktop nav */}
             <ul className="hidden lg:flex gap-6 items-center">
-              {navLinks.map((item, i) => (
-                <li key={i}>
-                  <Link
-                    to="#"
-                    className="text-gray-700 hover:text-[#316dff] text-sm font-medium transition-colors duration-200"
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
+            {navLinks.map((item, i) => (
+  <li
+    key={i}
+    className={`relative ${item.label === "Doctors" ? "group" : ""}`}
+  >
+    <Link
+      to={item.path}
+      className="text-gray-700 hover:text-[#316dff] text-sm font-medium transition-colors duration-200 py-6 block"
+    >
+      {item.label}
+    </Link>
+
+    {item.label === "Doctors" && (
+      <div
+        className="
+          absolute left-0 top-full
+          w-56 bg-white shadow-xl rounded-md
+          border border-gray-100
+          opacity-0 invisible
+          group-hover:opacity-100
+          group-hover:visible
+          transition-all duration-300
+          z-50
+        "
+      >
+        <Link
+          to="/doctor"
+          className="block px-5 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#316dff]"
+        >
+          Doctor Dashboard
+        </Link>
+      </div>
+    )}
+  </li>
+))}
             </ul>
 
             {/* Desktop buttons */}
@@ -95,21 +127,21 @@ export default function Bottom_Header() {
 
           {/* Nav Links */}
           <div className="px-4 py-4 border-b border-gray-100">
-            {navLinks.map((item, i) => (
-              <div
-                key={i}
-                className="flex items-center justify-between py-4 border-b border-gray-50 last:border-0"
-              >
-                <Link
-                  to="#"
-                  onClick={() => setOpenDrawer(false)}
-                  className="text-gray-800 font-medium text-lg hover:text-[#316dff] transition-colors"
-                >
-                  {item}
-                </Link>
-                <span className="text-gray-400">›</span>
-              </div>
-            ))}
+          {navLinks.map((item, i) => (
+  <div
+    key={i}
+    className="flex items-center justify-between py-4 border-b border-gray-50 last:border-0"
+  >
+    <Link
+      to={item.path}
+      onClick={() => setOpenDrawer(false)}
+      className="text-gray-800 font-medium text-lg hover:text-[#316dff] transition-colors"
+    >
+      {item.label}
+    </Link>
+    <span className="text-gray-400">›</span>
+  </div>
+))}
           </div>
 
           {/* Contact Info */}

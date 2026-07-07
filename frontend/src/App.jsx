@@ -1,55 +1,25 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route } from "react-router-dom";
 
-import TopHeader from './components/TopHeader'
-import Bottom_Header from './components/Bottom_Header';
-import HeroSection from './components/Header'
-import TopSpecialties from './components/TopSpecialities'
-import FeaturedDoctors from './components/FeaturedDoctor';
-import MarqueeStrip from './components/MarqueeStripe';
-import CompellingReasons from './components/CompellingReasons';
-import AboutUs from './components/About';
-import Testimonials from './components/Testimonial';
-import TrustedPartners from './components/TrustedPartners'
-import FAQSection from './components/FaqSections';
-import Mobile from './components/Mobile'
-import RecentBlogs from './components/RecentBlogs';
-import FooterUpper from './components/FooterUpper'
-import Footer from './components/Footer';
-import MobileCategories from './components/MobileCategories';
-import Signup from './Pages/Signup'
+import MainLayout from "./components/layout/MainLayout";
 
+import HomePage from "./features/home/HomePage";
+import Signup from "./features/auth/Signup";
+import DoctorListing from "./features/doctor/pages/DoctorListing";
+import BookingPage from "./features/booking";
+import DoctorDashboard from './features/doctor/index'
 function App() {
   return (
-    <>
-      <TopHeader />
-      <Bottom_Header />
-
-      <Routes>
-        {/* Home page — sab sections */}
-        <Route path="/" element={
-          <>
-            <HeroSection />
-            <MobileCategories />
-            <TopSpecialties />
-            <FeaturedDoctors />
-            <MarqueeStrip />
-            <CompellingReasons />
-            <AboutUs />
-            <Testimonials />
-            <TrustedPartners />
-            <FAQSection />
-            <Mobile />
-            <RecentBlogs />
-            <FooterUpper />
-            <Footer />
-          </>
-        } />
-
-        {/* Login page */}
+    <Routes>
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<Signup />} />
-      </Routes>
-    </>
-  )
+        <Route path="/doctors" element={<DoctorListing />} />
+        <Route path="/doctor/*" element={<DoctorDashboard />} />
+
+        <Route path="/booking" element={<BookingPage />} />
+      </Route>
+    </Routes>
+  );
 }
 
-export default App
+export default App;
