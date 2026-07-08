@@ -1,40 +1,39 @@
 import { NavLink } from 'react-router-dom'
 import {
   RiLayoutGridLine, RiFileListLine, RiCalendarLine,
-  RiTimeLine, RiUserLine, RiHeartPulseLine,
-  RiStarLine, RiFileTextLine,
-  RiBankCardLine, RiMessage2Line, RiArticleLine,
+   RiStarSmileLine, RiUserSmileLine,RiWallet3Line,
+  RiBankCardLine, RiMessage2Line, RiArticleLine,RiFileTextLine,
   RiSettings4Line, RiShareLine, RiLockLine, RiLogoutBoxLine, 
   
 } from "@remixicon/react"
 
-const doctor = {
-  img: "/doctor-profile-img.jpg",
-  banner: "/doctor-sidebar-bg.jpg",
-  name: "Dr Edalin Hendry",
-  degree: "BDS, MDS - Oral & Maxillofacial Surgery",
+const patient = {
+  img: "/profile-06.jpg",
+  banner: "/patient-sidebar-bg.jpg",
+  name: "Hendrita Hayes",
+  gender:"Female",
+  
   specialty: "Dentist",
 }
 
 const navItems = [
-  { label: "Dashboard",           path: "/doctor",                    icon: RiLayoutGridLine },
-  { label: "Requests",            path: "/doctor/requests",           icon: RiFileListLine,   badge: 8 },
-  { label: "Appointments",        path: "/doctor/appointments",       icon: RiCalendarLine },
-  { label: "Available Timings",   path: "/doctor/available-timings",  icon: RiTimeLine },
-  { label: "My Patients",         path: "/doctor/my-patients",        icon: RiUserLine },
-  { label: "Specialties & Services", path: "/doctor/specialties-services", icon: RiHeartPulseLine },
-  { label: "Reviews",             path: "/doctor/reviews",            icon: RiStarLine },
-  { label: "Accounts",            path: "/doctor/accounts",           icon: RiBankCardLine },
-  { label: "Invoices",            path: "/doctor/invoices",           icon: RiFileTextLine },
-  { label: "Payout Settings",     path: "/doctor/payout-settings",    icon: RiBankCardLine },
-  { label: "Message",             path: "/doctor/messages",           icon: RiMessage2Line,   badge: 7 },
-  { label: "Blog",                path: "/doctor/blog",               icon: RiArticleLine },
-  { label: "Profile Settings",    path: "/doctor/profile-settings",   icon: RiSettings4Line },
-  { label: "Social Media",        path: "/doctor/social-media",       icon: RiShareLine },
-  { label: "Change Password",     path: "/doctor/change-password",    icon: RiLockLine },
-]
+ 
+ { label: "Dashboard",         path: "/patient",                  icon: RiLayoutGridLine },
+ { label: "My Appointments",   path: "/patient/appointments",     icon: RiCalendarLine },
+ { label: "Favourites",        path: "/patient/favourites",       icon: RiStarSmileLine},
+ { label: "Dependents",        path: "/patient/dependents",       icon:  RiUserSmileLine},
+ { label: "Medical Records",   path: "/patient/medical-records",  icon:  RiArticleLine},
+ { label: "Wallet",            path: "/patient/wallet",           icon: RiWallet3Line},
+ { label: "Invoices",          path: "/patient/invoices",         icon: RiFileTextLine },
+ { label: "Message",           path: "/patient/messages",         icon: RiMessage2Line,   badge: 7 },
+ { label: "Vitals",            path: "/patient/vitals",           icon:  RiArticleLine},
+ { label: "Profile Settings",  path: "/patient/profile-settings", icon: RiSettings4Line },
+ { label: "Logout",            path: "/patient/logout",           icon: RiSettings4Line },
 
-export default function DoctorSidebar() {
+
+ ]
+
+export default function PatientDashboard() {
   
   return (
 
@@ -53,15 +52,15 @@ export default function DoctorSidebar() {
           className="h-28 rounded-lg"
           style={{ background: "linear-gradient(135deg, #1a5cff 0%, #0ea5e9 100%)" }}
         >
-          <img src={doctor.banner} alt="" className="w-full h-full object-cover rounded-lg" />
+          <img src={patient.banner} alt="" className="w-full h-full object-cover rounded-lg" />
         </div>
 
         {/* Avatar */}
         <div className="absolute left-1/2 -translate-x-1/2 -bottom-10">
           <div className="relative">
             <img
-              src={doctor.img}
-              alt={doctor.name}
+              src={patient.img}
+              alt={patient.name}
               className="w-24 h-24 rounded-full border-4 border-white object-cover"
             />
             <span className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-green-500 border-2 border-white" />
@@ -71,12 +70,12 @@ export default function DoctorSidebar() {
 
       {/* Doctor Info */}
       <div className="pt-12 pb-4 px-4 text-center border-b border-gray-100">
-        <h3 className="font-bold text-[#0f172a] hover:text-[##1a5cff] text-xl">{doctor.name}</h3>
-        <p className="text-[#575569] text-sm mt-1">{doctor.degree}</p>
-        <span className="inline-flex items-center gap-1 text-xs text-gray-500 mt-2 border px-2 py-0.5 border-[#e2e8f0] rounded">
+        <h3 className="font-bold text-[#0f172a] hover:text-[##1a5cff] text-xl">{patient.name}</h3>
+{/*         <p className="text-[#575569] text-sm mt-1">{patient.degree}</p>
+ */}        <span className="inline-flex items-center gap-1 text-xs text-gray-500 mt-2 border px-2 py-0.5 border-[#e2e8f0] rounded">
           <span className="w-2 h-2 rounded-full bg-blue-500 " />
           
-          <span className="">{doctor.specialty}</span>
+          {/* <span className="">{patient.specialty}</span> */}
         </span>
 
         {/* Availability dropdown */}
@@ -97,7 +96,7 @@ export default function DoctorSidebar() {
           <NavLink
             key={i}
             to={item.path}
-            end={item.path === '/doctor'}
+            end={item.path === '/patient'}
             className={({ isActive }) =>
               `flex items-center gap-3 px-4 py-2.5 rounded-xl mb-1 text-[#475569] font-medium transition-colors duration-200 ${
                 isActive

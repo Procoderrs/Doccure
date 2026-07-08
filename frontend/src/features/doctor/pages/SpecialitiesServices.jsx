@@ -98,7 +98,6 @@ export default function SpecialitiesServices() {
 
       {/* Breadcrumb */}
       <div className="p-6">
-        <Breadcrumb title="Specialities & Services" parent="Doctor" />
       </div>
 
       <div className="px-6 pb-10">

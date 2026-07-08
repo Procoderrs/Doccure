@@ -38,7 +38,6 @@ export default function Requests() {
 
   return (
     <div className="p-6">
-      <Breadcrumb title="Requests" parent="Doctor" />
 
       <div className="flex flex-col gap-4">
         {items.map((r, i) => (

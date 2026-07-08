@@ -27,7 +27,6 @@ const reviews = [
 export default function Reviews() {
   return (
     <div className="p-6">
-      <Breadcrumb title="Reviews" parent="Doctor" />
 
         <span className="pb-3 mb-3 block border-b border-gray-200 text-2xl font-bold"> Reviews</span>
 

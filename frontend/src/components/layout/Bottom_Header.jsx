@@ -4,8 +4,8 @@ import { RiMoreLine, RiCloseLine, RiMessage3Line, RiPhoneFill, RiLockPasswordLin
 
 const navLinks = [
   { label: "Home", path: "/" },
-  { label: "Doctors", path: "/doctors" },
-  { label: "Patients", path: "/patients" },
+  { label: "Doctors", path: "#" },
+  { label: "Patients", path: "#" },
   { label: "Pharmacy", path: "/pharmacy" },
   { label: "Pages", path: "/pages" },
   { label: "Blog", path: "/blog" },
@@ -30,11 +30,14 @@ export default function Bottom_Header() {
             {navLinks.map((item, i) => (
   <li
     key={i}
-    className={`relative ${item.label === "Doctors" ? "group" : ""}`}
+    className={`relative ${item.label === "Doctors" || item.label === "Patients" ? "group" : ""}`}
   >
     <Link
       to={item.path}
-      className="text-gray-700 hover:text-[#316dff] text-sm font-medium transition-colors duration-200 py-6 block"
+      onClick={(e) => {
+        if (item.label === "Doctors" || item.label === "Patients") e.preventDefault()
+      }}
+      className="text-gray-700 hover:text-[#316dff] text-sm font-medium transition-colors duration-200 py-6 block cursor-pointer"
     >
       {item.label}
     </Link>
@@ -57,6 +60,34 @@ export default function Bottom_Header() {
           className="block px-5 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#316dff]"
         >
           Doctor Dashboard
+        </Link>
+      </div>
+    )}
+
+    {item.label === "Patients" && (
+      <div
+        className="
+          absolute left-0 top-full
+          w-56 bg-white shadow-xl rounded-md
+          border border-gray-100
+          opacity-0 invisible
+          group-hover:opacity-100
+          group-hover:visible
+          transition-all duration-300
+          z-50
+        "
+      >
+        <Link
+          to="/patient"
+          className="block px-5 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#316dff]"
+        >
+          Patient Dashboard
+        </Link>
+        <Link
+          to="/doctors"
+          className="block px-5 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#316dff]"
+        >
+          Doctor Listing
         </Link>
       </div>
     )}

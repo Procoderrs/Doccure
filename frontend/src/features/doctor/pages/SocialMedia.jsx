@@ -13,7 +13,6 @@ export default function SocialMedia() {
 
   return (
     <div className="p-6">
-      <Breadcrumb title="Social Media" parent="Doctor" />
 
       <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
         <div className="flex justify-end mb-5">

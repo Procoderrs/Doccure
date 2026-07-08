@@ -12,7 +12,6 @@ const invoices = [
 export default function Invoices() {
   return (
     <div className="p-6 bg-white">
-      <Breadcrumb title="Invoices" parent="Doctor" />
  <h3 className="font-black text-black text-2xl mb-4 pb-3 border-b border-gray-200">Invoices</h3>
 
       <div className="bg-white rounded-2xl   ">

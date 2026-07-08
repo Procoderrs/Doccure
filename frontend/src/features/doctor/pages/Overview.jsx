@@ -44,10 +44,7 @@ export default function Overview() {
 
   return (
     <>
-      <div className="p-6">
-        <Breadcrumb title="Dashboard" parent="Doctor" />
-      </div>
-
+     
       <div className="px-8 py-6 flex flex-col gap-5">
 
         {/* ===== ROW 1: Stats (30%) + Appointments (70%) ===== */}

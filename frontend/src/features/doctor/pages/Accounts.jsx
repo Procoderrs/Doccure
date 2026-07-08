@@ -18,7 +18,7 @@ const statusColors = {
 export default function Accounts() {
   return (
     <div className="p-6">
-      <Breadcrumb title="Accounts" parent="Doctor" />
+     
 
  <h3 className="font-black text-black text-2xl mb-4 mb-3 pb-3 border-b border-gray-200">Accounts</h3>
       {/* Stats + Bank */}

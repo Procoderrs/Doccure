@@ -7,6 +7,7 @@ import Signup from "./features/auth/Signup";
 import DoctorListing from "./features/doctor/pages/DoctorListing";
 import BookingPage from "./features/booking";
 import DoctorDashboard from './features/doctor/index'
+import PatientDashboard from "./features/patient";
 function App() {
   return (
     <Routes>
@@ -15,6 +16,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/doctors" element={<DoctorListing />} />
         <Route path="/doctor/*" element={<DoctorDashboard />} />
+        <Route path="/patient/*" element={<PatientDashboard />} />
 
         <Route path="/booking" element={<BookingPage />} />
       </Route>

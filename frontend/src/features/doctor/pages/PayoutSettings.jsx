@@ -14,7 +14,6 @@ export default function PayoutSettings() {
 
   return (
     <div className="p-6">
-      <Breadcrumb title="Payout Settings" parent="Doctor" />
 
       {/* Settings Card */}
       <div className="bg-[#0f172a] rounded-2xl p-6 mb-6">

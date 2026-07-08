@@ -330,7 +330,6 @@ export default function ProfileSettings() {
 
   return (
     <div className="p-6">
-      <Breadcrumb title="Profile Settings" parent="Doctor" />
 
       {/* Tabs */}
       <div className="flex items-center gap-2 mb-6 flex-wrap">

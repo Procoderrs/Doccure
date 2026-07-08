@@ -32,7 +32,7 @@ const appointments = [
 export default function Appointments() {
   return (
     <div className="p-6">
-      <Breadcrumb title="Appointments" parent="Doctor" />
+    
 
       <div className="flex flex-col gap-4">
         {appointments.map((apt, i) => (

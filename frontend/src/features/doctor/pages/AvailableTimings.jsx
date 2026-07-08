@@ -10,7 +10,6 @@ export default function AvailableTimings() {
 
   return (
     <div className="p-6">
-      <Breadcrumb title="Available Timings" parent="Doctor" />
 
       <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
         <h3 className="font-bold text-gray-900 text-lg mb-6">Select Available Slots</h3>

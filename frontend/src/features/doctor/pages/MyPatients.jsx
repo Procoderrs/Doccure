@@ -16,7 +16,6 @@ export default function MyPatients() {
 
   return (
     <div className="p-6">
-      <Breadcrumb title="My Patients" parent="Doctor" />
 
       {/* Tabs + Filter */}
       <div className="flex items-center justify-between mb-6">
