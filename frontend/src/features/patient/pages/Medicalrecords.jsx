@@ -36,27 +36,27 @@ export default function MedicalRecords() {
               <tr key={i} className="border-t border-gray-50 hover:bg-gray-50 transition">
                 <td className="py-3 px-4 text-[#316dff] text-sm font-medium">{r.id}</td>
                 <td className="py-3 px-4 text-gray-800 text-sm font-medium">{r.name}</td>
-                <td className="py-3 px-4 text-gray-500 text-sm">{r.date}</td>
+                <td className="py-3 px-4 text-gray-900 text-sm">{r.date}</td>
                 <td className="py-3 px-4">
                   <div className="flex items-center gap-2">
-                    <img src={r.recordImg} alt="" className="w-8 h-8 rounded-full object-cover bg-gray-100" />
+                    <img src={r.recordImg} alt="" className="w-12 h-12 rounded-xl object-cover bg-gray-100" />
                     <span className="text-gray-800 text-sm">{r.recordFor}</span>
                   </div>
                 </td>
-                <td className="py-3 px-4 text-gray-500 text-sm">{r.comments}</td>
+                <td className="py-3 px-4 text-gray-600 text-sm">{r.comments}</td>
                 <td className="py-3 px-4">
                   <div className="flex items-center gap-2">
-                    <button className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200">
-                      <RiLinksLine size={13} className="text-gray-500" />
+                    <button className="w-7 h-7 rounded-full border  hover:text-white border-gray-500  hover:bg-[#316dff] flex items-center justify-center   ">
+                      <RiLinksLine size={13} className="text-gray-700   hover:text-white" />
                     </button>
-                    <button className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200">
-                      <RiEditLine size={13} className="text-gray-500" />
+                    <button className="w-7 h-7 rounded-full border border-gray-500  hover:text-white hover:bg-[#316dff] flex items-center justify-center   ">
+                      <RiEditLine size={13} className="text-gray-700 hover:text-white" /> 
                     </button>
-                    <button className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200">
-                      <RiDownloadLine size={13} className="text-gray-500" />
+                    <button className="w-7 h-7 rounded-full border border-gray-500 hover:text-white  hover:bg-[#316dff] flex items-center justify-center   ">
+                      <RiDownloadLine size={13} className="text-gray-700 hover:text-white" />
                     </button>
-                    <button className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center hover:bg-red-50">
-                      <RiDeleteBinLine size={13} className="text-red-400" />
+                    <button className="w-7 h-7 rounded-full border border-gray-500 hover:text-white  hover:bg-[#316dff] flex items-center justify-center   ">
+                      <RiDeleteBinLine size={13} className="text-gray-700 hover:text-white" />
                     </button>
                   </div>
                 </td>
@@ -70,7 +70,7 @@ export default function MedicalRecords() {
           {['‹', '1', '2', '3', '4', '...', '›'].map((p, i) => (
             <button key={i} className="w-8 h-8 rounded-full text-sm font-medium transition"
               style={{
-                background: p === '2' ? "linear-gradient(90.08deg, #316dff 0.09%, #02bfff 70.28%)" : "#f3f4f6",
+                background: p === '2' ? "#316dff " : "#f3f4f6",
                 color: p === '2' ? "white" : "#374151"
               }}
             >{p}</button>

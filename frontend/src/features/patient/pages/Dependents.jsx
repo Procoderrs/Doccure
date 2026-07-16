@@ -38,9 +38,9 @@ export default function Dependants() {
               <p className="font-bold text-gray-900 text-base">{d.name}</p>
               <p className="text-gray-500 text-sm flex items-center gap-1 mt-0.5">
                 <span className="text-gray-400">{d.relation}</span>
-                <span className="w-1 h-1 rounded-full bg-gray-300" />
+                <span className="w-2 h-2 rounded-full bg-[#316dff]" />
                 <span className="text-gray-400">{d.gender}</span>
-                <span className="w-1 h-1 rounded-full bg-gray-300" />
+                <span className="w-2 h-2 rounded-full bg-[#316dff]" />
                 <span className="text-gray-400">{d.age}</span>
               </p>
             </div>
@@ -54,8 +54,8 @@ export default function Dependants() {
               {/* Toggle */}
               <button
                 onClick={() => toggleActive(i)}
-                className="w-12 h-6 rounded-full transition-all relative"
-                style={{ background: d.active ? "#316dff" : "#e5e7eb" }}
+                className="w-12 h-6 rounded-full transition-all relative "
+                style={{ background: d.active ? "#04bd6c" : "#e5e7eb" }}
               >
                 <span
                   className="absolute top-1 w-4 h-4 rounded-full bg-white transition-all"
@@ -66,7 +66,7 @@ export default function Dependants() {
                 <RiEditLine size={15} className="text-gray-500" />
               </button>
               <button className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-red-50">
-                <RiDeleteBinLine size={15} className="text-red-400" />
+                <RiDeleteBinLine size={15} className="text-gray-500" />
               </button>
             </div>
 

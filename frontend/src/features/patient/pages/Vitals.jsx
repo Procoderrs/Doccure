@@ -14,23 +14,23 @@ const vitalCards = [
 export default function Vitals() {
   return (
     <div className="p-6">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6">Vitals</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-300 pb-3">Vitals</h2>
 
       {/* Latest Vitals */}
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 mb-6">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="font-bold text-gray-900">Latest Updated Vitals</h3>
-          <p className="text-gray-400 text-sm flex items-center gap-1">
+      <div className="bg-white rounded-2xl border border-gray-400   mb-6">
+        <div className="flex items-center justify-between mb-4 border-b px-6 py-3 border-gray-200">
+          <h3 className="font-bold text-2xl text-gray-900 ">Latest Updated Vitals</h3>
+          <p className="text-gray-900  flex items-center gap-1  px-6 py-3">
             📅 Last update on : {vitals.lastUpdate}
           </p>
         </div>
-        <div className="grid grid-cols-6 gap-4">
+        <div className="grid grid-cols-6  gap-4  px-5 py-3">
           {vitalCards.map((v, i) => (
             <div key={i}>
-              <p className="text-gray-400 text-xs flex items-center gap-1 mb-1">
-                {v.icon} {v.label}
+              <p className="text-gray-900 text-lg  flex items-center gap-1 mb-1">
+                {v.icon} {v.label} 
               </p>
-              <p className="font-bold text-gray-900 text-sm">{v.value}</p>
+              <p className="font-bold  text-gray-900 text-2xl">{v.value}</p>
             </div>
           ))}
         </div>
@@ -56,7 +56,7 @@ export default function Vitals() {
           <thead>
             <tr>
               {["ID", "Patient Name", "BMI", "Heart Rate", "FBC Status", "Weight", "Added on", "Action"].map(h => (
-                <th key={h} className="text-left text-sm font-medium py-3 px-4 bg-gray-50 text-gray-500">{h}</th>
+                <th key={h} className="text-left text-sm font-medium py-3 px-4 bg-gray-200 text-gray-800">{h}</th>
               ))}
             </tr>
           </thead>
@@ -66,7 +66,7 @@ export default function Vitals() {
                 <td className="py-3 px-4 text-[#316dff] text-sm font-medium">{r.id}</td>
                 <td className="py-3 px-4">
                   <div className="flex items-center gap-2">
-                    <img src={r.img} alt="" className="w-8 h-8 rounded-full object-cover bg-gray-100" />
+                    <img src={r.img} alt="" className="w-12 h-12 rounded-xl object-cover bg-gray-100" />
                     <span className="text-gray-800 text-sm">{r.name}</span>
                   </div>
                 </td>
@@ -84,7 +84,7 @@ export default function Vitals() {
                       <RiEditLine size={13} className="text-gray-500" />
                     </button>
                     <button className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center hover:bg-red-50">
-                      <RiDeleteBinLine size={13} className="text-red-400" />
+                      <RiDeleteBinLine size={13} className="text-gray-500" />
                     </button>
                   </div>
                 </td>

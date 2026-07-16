@@ -8,6 +8,7 @@ import DoctorListing from "./features/doctor/pages/DoctorListing";
 import BookingPage from "./features/booking";
 import DoctorDashboard from './features/doctor/index'
 import PatientDashboard from "./features/patient";
+import Booking from './features/patient/pages/Booking'
 function App() {
   return (
     <Routes>
@@ -19,6 +20,8 @@ function App() {
         <Route path="/patient/*" element={<PatientDashboard />} />
 
         <Route path="/booking" element={<BookingPage />} />
+        <Route path="/doctor-booking" element={<BookingPage />} />
+
       </Route>
     </Routes>
   );

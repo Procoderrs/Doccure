@@ -12,8 +12,9 @@ const patient = {
   banner: "/patient-sidebar-bg.jpg",
   name: "Hendrita Hayes",
   gender:"Female",
-  
-  specialty: "Dentist",
+  age:'32 years 03 Months',
+  patientId:'PT254654',
+ 
 }
 
 const navItems = [
@@ -71,23 +72,14 @@ export default function PatientDashboard() {
       {/* Doctor Info */}
       <div className="pt-12 pb-4 px-4 text-center border-b border-gray-100">
         <h3 className="font-bold text-[#0f172a] hover:text-[##1a5cff] text-xl">{patient.name}</h3>
-{/*         <p className="text-[#575569] text-sm mt-1">{patient.degree}</p>
- */}        <span className="inline-flex items-center gap-1 text-xs text-gray-500 mt-2 border px-2 py-0.5 border-[#e2e8f0] rounded">
-          <span className="w-2 h-2 rounded-full bg-blue-500 " />
-          
-          {/* <span className="">{patient.specialty}</span> */}
-        </span>
+        <h4 className="text-sm text-gray-500">Patient ID : {patient.patientId}</h4>
+        <p className="flex items-center justify-center gap-4">
+  <span className="text-sm">{patient.gender}</span>
 
-        {/* Availability dropdown */}
-        <div className="mt-5 text-left">
-          <p className="text-xs text-gray-500 mb-1">
-            Availability <span className="text-red-500">*</span>
-          </p>
-          <select className="w-full border border-[#e2e8f0] rounded-lg px-3 py-2 text-sm text-gray-700 outline-none">
-            <option>I am Available Now</option>
-            <option> Not  Available</option>
-          </select>
-        </div>
+  <span className="inline-block w-3 h-3 bg-blue-500 rounded-full"></span>
+
+  <span className="text-sm">{patient.age}</span>
+</p>
       </div>
 
       {/* Nav Links */}
