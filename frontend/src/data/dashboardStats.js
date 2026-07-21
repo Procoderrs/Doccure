@@ -1,0 +1,68 @@
+import {
+  RiStethoscopeLine, RiUserHeartLine, RiCalendarCheckLine,
+  RiHospitalFill, RiCapsuleLine, RiMoneyDollarCircleLine
+} from "@remixicon/react"
+
+export const dashboardStats = [
+  {
+    id: "doctors",
+    label: "Total Doctors",
+    value: 1284,
+    trend: 8.2,
+    icon: RiStethoscopeLine,
+    accent: "#2F6FED",
+    accentSoft: "#EAF1FE",
+    spark: [4, 6, 5, 8, 7, 9, 10],
+  },
+  {
+    id: "patients",
+    label: "Total Patients",
+    value: 24560,
+    trend: 12.5,
+    icon: RiUserHeartLine,
+    accent: "#17A398",
+    accentSoft: "#E6F6F4",
+    spark: [5, 5, 7, 6, 8, 9, 11],
+  },
+  {
+    id: "appointments",
+    label: "Total Appointments",
+    value: 8931,
+    trend: -3.1,
+    icon: RiCalendarCheckLine,
+    accent: "#6C5CE7",
+    accentSoft: "#EFEDFD",
+    spark: [9, 8, 8, 7, 6, 7, 6],
+  },
+  {
+    id: "hospitals",
+    label: "Total Hospitals",
+    value: 156,
+    trend: 4.0,
+    icon: RiHospitalFill,
+    accent: "#E8A33D",
+    accentSoft: "#FCF2E2",
+    spark: [3, 4, 4, 5, 5, 6, 7],
+  },
+  {
+    id: "pharmacyOrders",
+    label: "Pharmacy Orders",
+    value: 3402,
+    trend: 6.7,
+    icon: RiCapsuleLine,
+    accent: "#E8734A",
+    accentSoft: "#FCE9E1",
+    spark: [4, 5, 5, 6, 8, 7, 9],
+  },
+  {
+    id: "revenue",
+    label: "Revenue",
+    value: 918450,
+    isCurrency: true,
+    trend: 15.3,
+    icon: RiMoneyDollarCircleLine,
+    accent: "#2FA84F",
+    accentSoft: "#E7F6EA",
+    spark: [6, 7, 7, 9, 10, 12, 14],
+  },
+];
