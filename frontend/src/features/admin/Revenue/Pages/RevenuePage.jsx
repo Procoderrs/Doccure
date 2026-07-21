@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react'
 import { transactionsData, commissionRate } from '../../../../data/revenueData'
 import SummaryCards from '../components/SummaryCards'
-import FilterBar from '../components/filterBar'
+import FilterBar from '../components/FilterBar'
 import TransactionTable from '../components/TransactionTable'
 import DoctorPayoutsTable from '../components/DoctorPayoutTable'
 
